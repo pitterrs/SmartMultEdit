@@ -1,0 +1,37 @@
+unmanaged implementation in class zcl_fi_prorroga_vencimento unique;
+
+define behavior for zce_prorroga_vencimento //alias <alias_name>
+//late numbering
+//lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+
+   field ( readonly ) COD_CP,
+   NOME_CP,
+   BUKRS,
+   BELNR,
+   GJAHR,
+   BUZEI,
+   BLART,
+//   BUDAT,
+   COD_LOJA,
+   NOME_LOJA,
+   COD_GR,
+   CONSULTOR,
+   XBLNR,
+   VLR_NF,
+   VENCIMENTO,
+   KKBER,
+   CTLPC,
+   ZTERM;
+
+  field ( readonly : update ) budat;
+
+
+  update;
+
+  // Instance action and dynamic action control
+  action ( features : instance ) prorrogar result [1] $self;
+
+}
