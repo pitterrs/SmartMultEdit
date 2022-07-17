@@ -1,0 +1,133 @@
+<mvc:View
+    controllerName="com.br.grupoboticario.prorrogacaofree.controller.Worklist"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:semantic="sap.f.semantic"
+    height="100%">
+
+    
+    
+    
+    <VBox fitContainer="true" id="teste0">
+			<smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="zce_prorroga_vencimento" persistencyKey="SmartFilter_Explored" basicSearchFieldName="Belnr" enableBasicSearch="true" >
+				<smartFilterBar:controlConfiguration>
+					<smartFilterBar:ControlConfiguration id="teste" key="BUKRS" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="true">
+                    </smartFilterBar:ControlConfiguration>
+                    <smartFilterBar:ControlConfiguration id="teste2" key="BELNR" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="true">
+                    </smartFilterBar:ControlConfiguration>
+                    <smartFilterBar:ControlConfiguration id="teste3" key="GJAHR" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="true">
+                    </smartFilterBar:ControlConfiguration>
+                    <smartFilterBar:ControlConfiguration id="teste4" key="BUDAT" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="true">
+                    </smartFilterBar:ControlConfiguration>
+                    <smartFilterBar:ControlConfiguration id="teste5" key="XBLNR" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="true">
+                    </smartFilterBar:ControlConfiguration>
+                    <smartFilterBar:ControlConfiguration id="teste6" key="BLART" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="true">
+                    </smartFilterBar:ControlConfiguration>
+                    <smartFilterBar:ControlConfiguration id="teste7" key="COD_CP" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="true">
+                    </smartFilterBar:ControlConfiguration>
+                    <smartFilterBar:ControlConfiguration id="teste8" key="COD_LOJA" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="true">
+                    </smartFilterBar:ControlConfiguration>
+				</smartFilterBar:controlConfiguration>
+				<!-- layout data used to make the table growing but the filter bar fixed -->
+				<smartFilterBar:layoutData>
+					<FlexItemData shrinkFactor="0"/>
+				</smartFilterBar:layoutData>
+			</smartFilterBar:SmartFilterBar>
+			<!-- <smartTable:SmartTable id="table" entitySet="zce_prorroga_vencimento" smartFilterId="smartFilterBar" tableType="Table" useExportToExcel="true" 
+            beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="Line Items" showRowCount="true" 
+            persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding" editTogglable="true" app:useSmartToggle="true"
+            editToggled="onEditPromotionsPressed"> -->
+
+                <!-- <smartTable:customToolbar>
+			            <OverflowToolbar design="Transparent">
+				                <ToolbarSpacer/>
+				                <Button id="btnSave" text="Save" visible="false" icon="sap-icon://save" tooltip="Save all changes" press="onSave"/>
+			            </OverflowToolbar>
+		            </smartTable:customToolbar> -->
+
+
+                <!-- <Table >
+                    <columns>
+                        <Column id="BELNR">
+                            <customData>
+                                <core:CustomData key="p13nData" value='\{"columnKey": "BELNR", "columnIndex": 1, "leadingProperty": "BELNR" \}' />
+                            </customData>
+                            <Text text="Documento" />
+                        </Column>
+                        <Column id="VLR_NF">
+                            <customData>
+                                <core:CustomData key="p13nData" value='\{"columnKey": "VLR_NF", "columnIndex": 2, "leadingProperty": "VLR_NF" \}' />
+                            </customData>
+                            <Text text="VLR_NF" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{path: 'BELNR', type: 'sap.ui.model.type.Integer', formatOptions: {UTC: false}}" />
+                            </cells>
+                            <cells>
+                                <Text text="{path: 'VLR_NF'}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table> -->
+            
+            
+                <!-- <smartTable:layoutData>
+                    <FlexItemData growFactor="1" baseSize="0%"/>
+                </smartTable:layoutData> -->
+			<!-- </smartTable:SmartTable> -->
+
+            <smartTable:SmartTable id="table"
+                entitySet="zce_prorroga_vencimento"
+                tableType="ResponsiveTable"
+                useExportToExcel="false"
+                useVariantManagement="false"
+                showVariantManagement="false"
+                useTablePersonalisation="false"
+                showTablePersonalisation="false"
+                header="Employees"
+                enableAutoBinding="true"
+                enableAutoColumnWidth="true">
+                <smartTable:customToolbar>
+                    <OverflowToolbar design="Transparent">
+                        <ToolbarSpacer/>
+                        <Button type="Transparent" id="btnMultiEdit" text="Edit Multiple" enabled="false" press="onOpenMultiEdit"/>
+                    </OverflowToolbar>
+                </smartTable:customToolbar>
+                <Table>
+                    <columns>
+                        <Column id="NOVO_VENCIMENTO">
+                            <customData>
+                                <core:CustomData key="p13nData" value='\{"columnKey": "NOVO_VENCIMENTO", "columnIndex": 3, "leadingProperty": "NOVO_VENCIMENTO" \}' />
+                            </customData>
+                            <Text text="Data" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <!-- <Text text="{path: 'NOVO_VENCIMENTO', type: 'sap.ui.model.type.Date', formatOptions: {UTC: false}}" /> -->
+                                <Input value="{NOVO_VENCIMENTO}" editable="true"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </smartTable:SmartTable>
+
+		</VBox>
+    
+    
+    
+    
+    
+
+</mvc:View>
