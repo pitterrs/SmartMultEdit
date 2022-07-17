@@ -12,7 +12,7 @@ sap.ui.define([
 ], function (BaseController, JSONModel, formatter, Filter, FilterOperator, MessageToast, ODataModel, ResourceModel, syncStyleClass, Fragment) {
     "use strict";
 
-    return BaseController.extend("com.br.grupoboticario.prorrogacaofree.controller.Worklist", {
+    return BaseController.extend("mynamespace.prorrogacaofree.controller.Worklist", {
 
         formatter: formatter,
 
@@ -57,7 +57,7 @@ sap.ui.define([
 
         onOpenMultiEdit: function() {
 			Fragment.load({
-				name: "com.br.grupoboticario.prorrogacaofree.view.MultiEditDialog",
+				name: "mynamespace.prorrogacaofree.view.MultiEditDialog",
 				controller: this
 			}).then(function(oFragment) {
 				this.oMultiEditDialog = oFragment;
